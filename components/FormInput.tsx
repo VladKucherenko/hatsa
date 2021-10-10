@@ -1,30 +1,39 @@
+import { FormEvent } from "react";
+
 type Props = {
-  id: string,
-  label: string,
-  onInput: (input: string) => void,
-  errorMessage?: string,
-}
+  id: string;
+  label: string;
+  //TODO: any
+  onInput: (target: any) => void;
+  errorMessage: () => JSX.Element;
+};
 
 function wait(milliseconds: number) {
   const start = new Date().getTime();
   while (new Date().getTime() - start < milliseconds) {}
 }
-export default function FormInput({id, label, errorMessage, onInput}: Props) {
+
+export default function FormInput({ id, label, errorMessage, onInput }: Props) {
   // This component is a bit slow to render...
   wait(25);
 
+  const onInputHandler = (event: FormEvent<HTMLInputElement>) =>
+    onInput(event.currentTarget);
+
   return (
     <div className="flex items-center">
-      <label htmlFor={id} className="flex-1">{label}</label>
+      <label htmlFor={id} className="flex-1">
+        {label}
+      </label>
       <div className="flex-1">
         <input
           type="text"
           id={id}
           name={id}
           className="w-full border rounded p-2"
-          onInput={(e) => onInput(e.currentTarget.value)}
+          onInput={onInputHandler}
         />
-        {errorMessage && <p className="text-sm text-red-600">{errorMessage}</p>}
+        {errorMessage()}
       </div>
     </div>
   );
