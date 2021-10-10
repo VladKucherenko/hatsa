@@ -6,25 +6,28 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "start-storybook": "npx http-server storybook-static"
   },
   "dependencies": {
     "next": "latest",
+    "query-string": "^7.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
-    "@storybook/addon-actions": "^6.2.9",
-    "@storybook/addon-essentials": "^6.2.9",
-    "@storybook/addon-links": "^6.2.9",
+    "@storybook/addon-actions": "^6.3.10",
+    "@storybook/addon-essentials": "next",
+    "@storybook/addon-links": "^6.3.10",
     "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/react": "^6.2.9",
+    "@storybook/react": "next",
     "@types/react": "^17.0.9",
-    "autoprefixer": "^10.0.4",
-    "postcss": "^8.1.10",
-    "tailwindcss": "^2.1.1",
+    "autoprefixer": "^9",
+    "babel-loader": "^8.2.2",
+    "postcss": "^7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "^4.3.2"
   }
 }
