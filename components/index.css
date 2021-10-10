@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply text-white font-bold rounded;
+}
+
+.primary-default {
+  @apply bg-blue-500 hover:bg-blue-700 active:bg-blue-500;
+}
+
+.primary-outline {
+  @apply bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white border border-blue-500 hover:border-transparent rounded;
+}
+
+.error-default {
+  @apply bg-red-500 hover:bg-red-700 active:bg-red-500;
+}
+
+.error-outline {
+  @apply bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white border border-red-500 hover:border-transparent rounded;
+}
+
+.error-outline img {
+  @apply hover:bg-blue-700;
+}
+
+.error {
+  @apply bg-red-500 hover:bg-red-700 active:bg-red-500;
+}
+
+.small {
+  @apply w-24 h-7;
+}
+
+.regular {
+  @apply h-10 w-36;
+}
+
+.regular img {
+  @apply mr-2;
+}
+
+.large {
+  @apply w-44 h-14;
+}
+
+.large img {
+  @apply mr-3;
+}
+
+.icon {
+  @apply flex ;
+}
+
+.icon div {
+  @apply m-auto flex;
+}
+
+.icon svg {
+  @apply mr-0.5;
+}
+
+.primary-icon {
+  fill: #0A344F;
+}
+
+.error-icon {
+  fill: #FF0054;
+}
+
+.primary-default .primary-icon, .error-default .error-icon {
+  fill: #FFFF;
+}
+
+.primary-outline:hover .primary-icon, .error-outline:hover .error-icon {
+  fill: #FFFF;
+}
